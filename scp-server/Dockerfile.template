@@ -1,0 +1,13 @@
+# This first line selects our base image. In this instance we use the dockerfile templates,
+# this means the appropriate image gets picked.
+FROM ubuntu:16.04
+
+# here we install apt dependencies. We also remove the apt lists in the same step,
+# this reduces the size of the docker image.
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+    openssh-server && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY start.sh /usr/src/
+
+CMD [ "/bin/bash", "/usr/src/start.sh" ]

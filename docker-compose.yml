@@ -1,0 +1,31 @@
+version: '2'
+services:
+  bungeecord:
+    network_mode: host
+    restart: always
+    build: ./bungeecord
+    privileged: true
+    labels:
+      io.balena.features.dbus: 1
+    volumes:
+      - bungeecordfiles:/usr/src/bungeecordfiles
+      - bungeecordcache:/bungeecordcache
+    ports:
+      - "25565:25565/udp"
+      - "25565:25565/tcp"
+  scp-server:
+    network_mode: host
+    restart: always
+    build: ./scp-server
+    privileged: true
+    labels:
+      io.balena.features.dbus: 1
+    volumes:
+      - bungeecordfiles:/bungeecordfiles
+      - bungeecordcache:/bungeecordcache
+    ports:
+      - "22:22/udp"
+      - "22:22/tcp"
+volumes:
+  bungeecordfiles:
+  bungeecordcache:
