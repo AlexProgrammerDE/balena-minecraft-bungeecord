@@ -1,6 +1,6 @@
 ![balena Minecraft Bungeecord](images/logo.png)
 
-# Bungeecord for the Raspberry Pi :star2:
+# Bungeecord for the Raspberry Pi [![CodeFactor](https://www.codefactor.io/repository/github/alexprogrammerde/balena-minecraft-bungeecord/badge)](https://www.codefactor.io/repository/github/alexprogrammerde/balena-minecraft-bungeecord)
 **Starter project enabling you a Bungeecord Proxy using just a Raspberry Pi.**
 
 This project has been tested on and Raspberry Pi 4 B 4GB.
